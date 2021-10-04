@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All tasks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--     Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<h1>your tasks</h1>
+<!--<nav th:replace="layouts :: navbar"></nav>-->
+
+<div class="container">
+<!--    <form action="/todo/new" th:object="${task}" method="GET">-->
+<!--    <h1 th:text="${task.title}"/>-->
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>title</td>
+            <td>description</td>
+            <td>datetime</td>
+            <td>done</td>
+
+        </tr>
+        <tr th:each="task :  ${tasks}">
+            <td><p th:text="${task.id}" /></td>
+            <td><p th:text="${task.title}" /></td>
+            <td><p th:text="${task.description}" /></td>
+            <td><p th:text="${task.datetime}" /></td>
+            <td><p th:text="${task.done}" /></td>
+
+        </tr>
+    </table>
+
+<!--        <input type="text" placeholder="Project Name" th:field="*{task.title}">-->
+
+<!--        <select th:field="${task.done}">-->
+<!--&lt;!&ndash;            <option th:value="NOTSTARTED"> Not Started</option>&ndash;&gt;-->
+<!--&lt;!&ndash;            <option th:value="INPROGRESS"> In Progress</option>&ndash;&gt;-->
+<!--&lt;!&ndash;            <option th:value="COMPLETED"> Completed</option>&ndash;&gt;-->
+<!--        </select>-->
+
+<!--        <textarea type="text" placeholder="Enter Task Description" th:field="${task.description}"></textarea>-->
+
+<!--        <button type="submit">Create Project</button>-->
+
+    </form>
+</div>
+
+</body>
+</html>
